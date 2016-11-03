@@ -1,0 +1,2 @@
+defmodule StatusKu do
+end
