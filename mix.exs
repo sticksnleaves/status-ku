@@ -30,6 +30,6 @@ defmodule App.Mixfile do
     [{:httpoison, "~> 0.9.2"},
      {:poison, "~> 3.0.0"},
      # test
-     {:bypass, "~> 0.5.1", only: :test}]
+     {:bypass, "~> 0.5.1", git: "https://github.com/PSPDFKit-labs/bypass", only: :test}]
   end
 end
