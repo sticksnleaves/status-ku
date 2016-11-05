@@ -8,23 +8,14 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
-# You can configure for your application as:
-#
-#     config :app, key: :value
-#
-# And access this configuration in your application as:
-#
-#     Application.get_env(:app, :key)
-#
-# Or configure a 3rd-party app:
-#
-#     config :logger, level: :info
-#
+config :status_ku, base_url: "https://status.heroku.com/api/v3"
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
-#
-#     import_config "#{Mix.env}.exs"
+
+if Mix.env == :test do
+  import_config "test.exs"
+end
