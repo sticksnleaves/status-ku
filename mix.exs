@@ -14,7 +14,8 @@ defmodule App.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:httpoison, :logger, :poison]]
+    [mod: {StatusKu, []},
+     applications: [:httpoison, :logger, :poison]]
   end
 
   # Dependencies can be Hex packages:
