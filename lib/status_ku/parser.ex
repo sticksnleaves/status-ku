@@ -32,12 +32,13 @@ defmodule StatusKu.Parser do
         value = Map.get(map, key) || Map.get(map, to_string(key))
         struct_value = Map.get(struct, key)
 
-        if (is_list(struct_value) && is_list(value)) do
-          {key, struct_from_list(value, as: Enum.at(struct_value, 0))}
-        else if (is_map(struct_value) && is_map(value)) do
-          {key, struct_from_map(value, as: struct_value)}
-        else
-          {key, value}
+        cond do
+          (is_list(struct_value) && is_list(value)) ->
+            {key, struct_from_list(value, as: Enum.at(struct_value, 0))}
+          (is_map(struct_value) && is_map(value)) ->
+            {key, struct_from_map(value, as: struct_value)}
+          true ->
+            {key, value}
         end
       end
 
