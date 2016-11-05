@@ -15,7 +15,7 @@ defmodule StatusKu.API.Base do
 
   # private
 
-  defp handle_request(method, path, params \\ %{}) do
+  defp handle_request(method, path, params) do
     if (method == :get) do
       apply(HTTPoison, method, [request_url(path) <> "?" <> URI.encode_query(params)])
     else
