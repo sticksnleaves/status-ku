@@ -1,5 +1,7 @@
 # StatusKu
 
+[![Build Status](https://travis-ci.org/sticksnleaves/status-ku.svg?branch=master)](https://travis-ci.org/sticksnleaves/status-ku)
+
 Elixir client for the Heroku status API
 
 ## Installation
