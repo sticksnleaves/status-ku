@@ -37,7 +37,7 @@ defmodule StatusKuTest do
       Plug.Conn.resp(conn, 200, issues_json)
     end
 
-    assert {:ok, [issue_struct]} == StatusKu.issues(limit: 1, page: 1)
+    assert {:ok, [issue_struct]} == StatusKu.issues(%{limit: 1, page: 1})
   end
 
   # private
