@@ -15,6 +15,10 @@ defmodule StatusKu.API.Base do
 
   # private
 
+  defp base_url do
+    Application.get_env(:status_ku, :base_url) || "https://status.heroku.com/api/v3"
+  end
+
   defp handle_request(method, path, params) do
     if (method == :get) do
       apply(HTTPoison, method, [request_url(path) <> "?" <> URI.encode_query(params)])
@@ -28,6 +32,6 @@ defmodule StatusKu.API.Base do
   end
 
   defp request_url(path) do
-    Application.get_env(:status_ku, :base_url) <> path
+    base_url <> path
   end
 end
