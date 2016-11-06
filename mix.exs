@@ -9,7 +9,8 @@ defmodule App.Mixfile do
      start_permanent: Mix.env == :prod,
      deps: deps(),
      preferred_cli_env: ["coveralls": :test, "coveralls.details": :test,
-                         "coveralls.post": :test, "coveralls.html": :test],
+                         "coveralls.html": :test, "coveralls.post": :test,
+                         "coveralls.travis": :test],
      test_coverage: [tool: ExCoveralls]]
   end
 
