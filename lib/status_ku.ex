@@ -14,8 +14,9 @@ defmodule StatusKu do
   Retrieve the current status.
 
   ## Examples
-
+    ```
     StatusKu.current_status
+    ```
   """
   @spec current_status :: %StatusKu.Model.Status{}
   defdelegate current_status, to: StatusKu.API.Status
@@ -25,7 +26,9 @@ defmodule StatusKu do
 
   ## Examples
 
+    ```
     StatusKu.issue(604)
+    ```
   """
   @spec issue(integer | String.t) :: %StatusKu.Model.Issue{}
   defdelegate issue(id), to: StatusKu.API.Status
@@ -35,9 +38,11 @@ defmodule StatusKu do
 
   ## Examples
 
+    ```
     StatusKu.issues
     StatusKu.issues(limit: 1, page: 1)
+    ```
   """
-  @spec issues(map) :: [%StatusKu.Model.Issue{}]
+  @spec issues(map | keyword) :: [%StatusKu.Model.Issue{}]
   defdelegate issues(params \\ %{}), to: StatusKu.API.Status
 end
