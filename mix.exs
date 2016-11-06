@@ -3,14 +3,16 @@ defmodule App.Mixfile do
 
   def project do
     [app: :status_ku,
+     description: "Elixir client for the Heroku status API",
      version: "1.0.0",
-     elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
      deps: deps(),
+     elixir: "~> 1.3",
+     package: package(),
      preferred_cli_env: ["coveralls": :test, "coveralls.details": :test,
                          "coveralls.html": :test, "coveralls.post": :test,
                          "coveralls.travis": :test],
+     start_permanent: Mix.env == :prod,
      test_coverage: [tool: ExCoveralls]]
   end
 
@@ -37,5 +39,14 @@ defmodule App.Mixfile do
      # test
      {:bypass, "~> 0.5.1", git: "https://github.com/PSPDFKit-labs/bypass", only: :test},
      {:excoveralls, "~> 0.5.7", only: :test}]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/sticksnleaves/status-ku"},
+      maintainers: ["anthonator"],
+      name: "status-ku"
+    ]
   end
 end
