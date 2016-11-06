@@ -47,8 +47,7 @@ defmodule App.Mixfile do
     [
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/sticksnleaves/status-ku"},
-      maintainers: ["anthonator"],
-      name: "status-ku"
+      maintainers: ["anthonator"]
     ]
   end
 end
