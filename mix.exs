@@ -36,6 +36,8 @@ defmodule App.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.9.2"},
      {:poison, "~> 3.0.0"},
+     # dev
+     {:ex_doc, ">= 0.0.0", only: :dev},
      # test
      {:bypass, "~> 0.5.1", git: "https://github.com/PSPDFKit-labs/bypass", only: :test},
      {:excoveralls, "~> 0.5.7", only: :test}]
