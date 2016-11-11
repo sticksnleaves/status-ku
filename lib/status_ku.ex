@@ -7,7 +7,6 @@ defmodule StatusKu do
 
   @doc false
   def start(_type, _args) do
-    HTTPoison.start
     StatusKu.Supervisor.start_link
   end
 
