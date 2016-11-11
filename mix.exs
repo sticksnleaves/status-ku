@@ -4,7 +4,7 @@ defmodule StatusKu.Mixfile do
   def project do
     [app: :status_ku,
      description: "Elixir client for the Heroku status API",
-     version: "1.0.0",
+     version: "1.0.1",
      build_embedded: Mix.env == :prod,
      deps: deps(),
      elixir: "~> 1.3",
@@ -34,7 +34,7 @@ defmodule StatusKu.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:httpoison, "~> 0.9.2"},
+    [{:httpoison, "~> 0.10.0"},
      {:poison, "~> 3.0.0"},
      # dev
      {:ex_doc, ">= 0.0.0", only: :dev},
